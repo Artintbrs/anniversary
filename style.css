@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #070707;
+  color: white;
+  font-family: Inter, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#stars {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 55px 55px;
+  opacity: .08;
+  animation: move 60s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120px);
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  display: none;
+  animation: fade .8s;
+}
+
+.card.active {
+  display: block;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 56px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 25px;
+  letter-spacing: 4px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 45px;
+}
+
+.card.active p {
+  opacity: 0;
+  animation: fade 2.2s ease forwards;
+  animation-delay: .5s;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 30px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+button {
+  background: #8b1e2d;
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.card.active button {
+  opacity: 0;
+  animation: fadeBtn 1.5s ease forwards;
+  animation-delay: 2.8s;
+}
+
+@keyframes fadeBtn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: .6;
+    transform: translateY(0);
+  }
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.card.exit button {
+  opacity: .6;
+  animation: fadeBtnOut 1.5s ease forwards;
+}
+
+@keyframes fadeBtnOut {
+  from {
+    opacity: .6;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+.card.exit p {
+  opacity: 1;
+  animation: fadeOut 2.2s ease forwards;
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.wallet {
+  display: inline-block;
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 18px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  margin-top: 25px;
+  transition: .3s;
+}
+
+.wallet:hover {
+  transform: translateY(-3px);
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 18px;
+  opacity: .75;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  pointer-events:none;
+}
+
+.container{
+  position:relative;
+  z-index:10;
+}
